@@ -1,13 +1,12 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 
-const messageBird = require('messagebird')('xuLLrc7KKPlxk9tsKWcDRtxN3');
+const messageBird = require('messagebird')('CfoIq4RZCKBI2kPvKbqV8jhds');
 
 
 var app = express();
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.set('view engine', 'ejs');
+app.set('views', './views');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res){
